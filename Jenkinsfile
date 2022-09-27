@@ -6,7 +6,7 @@ pipeline {
         stage("clone the git") {
             steps {
                 echo "Cloning the git"
-                git branch: 'master', url: 'https://github.com/venkat5290/jenkins-maven-sonarqube'
+                git branch: 'master', url: 'https://github.com/KeyonGenesis/jenkins-maven-sonarqube'
                 echo "Git cloned"
             }
         }
