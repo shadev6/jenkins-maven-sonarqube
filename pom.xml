@@ -66,4 +66,35 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<profiles>
+	    <profile>
+	        <id>sonar</id>
+	        <activation>
+	            <activeByDefault>true</activeByDefault>
+	        </activation>
+	        <properties>
+	            <!-- 
+	            Default url is http://localhost:9000, 
+	            You can speficy your any sonarqube url value which you are using
+	            -->
+	            <sonar.host.url>
+	                http://localhost:9000
+	            </sonar.host.url>
+	           
+	            <!-- Generate token by login as admin User in your SonarQube site, 
+	            steps given below -->
+	            <!--
+	                 User > My Account > Security -> Enter Token Name
+	                 Click the Generate button, you will see the token value.
+	                 (Copy it immediately; 
+	                 Once you dismiss the notification you will not be able to retrieve it.)
+	            -->
+	         
+	            <sonar.coverage.jacoco.xmlReportPaths>
+	                ${project.basedir}/target/site/jacoco-report/jacoco.xml
+	            </sonar.coverage.jacoco.xmlReportPaths>
+	        </properties>
+	    </profile>
+	</profiles>
 </project>
